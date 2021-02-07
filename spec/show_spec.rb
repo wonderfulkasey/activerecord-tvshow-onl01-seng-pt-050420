@@ -28,12 +28,6 @@ describe Show do
       expect(game_of_thrones.season).to eq("Spring")
     end
 
-    it "has a season column and attribute added from another migration file" do
-      filepath = File.expand_path(File.dirname(File.dirname(__FILE__))) + "/db/migrate"
-      expect(Dir.entries(filepath)).to include("002_add_season_to_shows.rb")
-    end
-  end
-
   describe "::highest_rating" do
     it "returns the highest rating of all the TV shows" do
       expect(Show.highest_rating).to eq(10)
